@@ -1,0 +1,204 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+body {
+	background: #008083;
+	overflow: hidden;
+}
+
+.desktop {
+	position: fixed;
+	bottom: 31px;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 0;
+}
+
+.taskbar {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 31px;
+	background: #c0c0c0;
+	border-top: 2px solid #FFFFFF;
+	padding: 2px;
+	z-index: 1;
+}
+
+.start-button {
+	float: left;
+	color: #000000;
+	width: 64px;
+	height: 25px;
+	border-top: 2px solid #FFFFFF;
+	border-left: 2px solid #FFFFFF;
+	border-right: 2px solid #000000;
+	border-bottom: 2px solid #000000;
+	text-align: center;
+	cursor: pointer;
+	user-select: none;
+
+	&.active {
+		border-top: 2px solid #000000;
+		border-left: 2px solid #000000;
+		border-right: 2px solid #FFFFFF;
+		border-bottom: 2px solid #FFFFFF;
+	}
+}
+
+.desktop-menu {
+	position: fixed;
+	bottom: 29px;
+	left: 0;
+	border-top: 2px solid #FFFFFF;
+	border-left: 2px solid #FFFFFF;
+	border-right: 2px solid #000000;
+	border-bottom: 2px solid #000000;
+	z-index: 2;
+	&.hidden {
+		display: none;
+	}
+	.menu-item {
+		color: #000;
+		width: 134px;
+		height: 32px;
+		background: #b4b4b4;
+		line-height: 32px;
+		cursor: pointer;
+		padding: 0 10px;
+		position: relative;
+		&:hover {
+			background: #000080;
+			color: #FFFFFF;
+
+			.menu-item-sub-menu {
+				display: block;
+			}
+		}
+	}
+	.hr {
+		height: 2px;
+	}
+	hr {
+		border-color: #000;
+		height: 2px;
+		background-color: #FFF;
+		margin: 0;
+	}
+	.glyphicon-triangle-right {
+		float: right;
+		font-size: 10px;
+		line-height: 31px;
+	}
+
+	.menu-item-sub-menu {
+		position: absolute;
+		left: 132px;
+		top: -2px;
+		border-top: 2px solid #FFFFFF;
+		border-left: 2px solid #FFFFFF;
+		border-right: 2px solid #000000;
+		border-bottom: 2px solid #000000;
+		z-index: 3;
+		display: none;
+		.menu-item-sub-menu-item {
+			@extend .menu-item;
+			width: 150px;
+		}
+	}
+}
+
+.dock {
+	float: right;
+	height: 23px;
+	border-top: 2px solid #888a89;
+	border-left: 2px solid #888a89;
+	border-right: 2px solid #FFFFFF;
+	border-bottom: 2px solid #FFFFFF;
+	padding: 2px;
+
+	.time {
+		line-height: 13px;
+	}
+}
+
+.windows {
+	position: relative;
+	z-index: 1;
+}
+
+.window {
+	border: 2px solid #FFFFFF;
+	position: absolute;
+}
+
+.fake-window {
+	position: absolute;
+	top: 0;
+	right: 40px;
+	left: 0;
+	height: 18px;
+	cursor: move;
+	&.big {
+		top: -200px;
+		right: -200px;
+		bottom: -200px;
+		left: -200px;
+		height: auto;
+	}
+}
+
+.window-bar {
+	background: #808080;
+	color: #c0c0c0;
+	height: 18px;
+	line-height: 18px;
+	font-size: 12px;
+	padding: 2px 0;
+	user-select: none;
+	position: relative;
+
+	&.focused {
+		background: #000080;
+		color: #FFFFFF;
+	}
+
+	.window-title {
+		float: left;
+	}
+	.window-actions {
+		float: right;
+		span {
+			display: block;
+			width: 14px;
+			line-height: 13px;
+			background: #c0c0c0;
+			border-top: 2px solid #FFFFFF;
+			border-left: 2px solid #FFFFFF;
+			border-right: 2px solid #000000;
+			border-bottom: 2px solid #000000;
+			color: #000000;
+			cursor: pointer;
+			text-align: center;
+			font-size: 9px;
+		}
+	}
+}
+
+.ms-dos {
+	background: #000000;
+	color: #FFFFFF;
+	width: 600px;
+	min-height: 400px;
+	max-height: 400px;
+	overflow-y: scroll;
+}
